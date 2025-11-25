@@ -27,5 +27,6 @@ int main(){
         }
     }
     cout << sum << endl;
+    in.close();
     return 0;
 }
