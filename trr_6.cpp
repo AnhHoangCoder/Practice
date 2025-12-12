@@ -11,23 +11,21 @@ ofstream fout("output.txt");
 
 int n, k;
 vector<vector<int>> a;
-vector<int> col_indices; // col_indices[i] = j (chọn cột j), = -1 (không chọn)
+vector<int> col_indices;
 vector<bool> used_col;
 
 void print_solution() {
     fout << "[ ";
-    bool has_element = false;
     for (int i = 0; i < n; i++) {
         if (col_indices[i] != -1) {
             fout << a[i][col_indices[i]] << " ";
-            has_element = true;
         }
     }
-    if (!has_element && k == 0) fout << "Empty Set "; // Trường hợp k=0 và không chọn gì
     fout << "]" << endl;
 }
 
 void back_track(int row, int sum) {
+    if(sum > k) return;
     // Điều kiện dừng: Khi đã xem xét hết tất cả các hàng
     if (row == n) {
         if (sum == k) {
@@ -49,13 +47,14 @@ void back_track(int row, int sum) {
             col_indices[row] = -1; 
         }
     }
-
+    //vì đề bài ko yêu cầu chọn đúng n phần tử nên khi có sum == k
+    //thì ta in ra luôn
     col_indices[row] = -1;
     back_track(row + 1, sum);
 }
 
 void test_case() {
-    if (!(fin >> n >> k)) return;
+    fin >> n >> k;
     a.assign(n, vector<int>(n, 0));
     used_col.assign(n, false);
     col_indices.assign(n, -1); // Mặc định ban đầu là không chọn hàng nào
