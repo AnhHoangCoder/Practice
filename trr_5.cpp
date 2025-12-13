@@ -44,10 +44,6 @@ void test_case() {
     for (int i = 0; i < n; i++) {
         fin >> a[i];
     }
-    
-    // Mẹo: Nên sort mảng a trước nếu đề bài yêu cầu in theo thứ tự từ điển
-    // sort(a.begin(), a.end()); 
-
     back_track(0, 0);
     fout << "\n";
 }
