@@ -1,4 +1,5 @@
 //Bài toán cái túi
+//Theo phương pháp nhánh cận
 
 #include <iostream>
 #include <fstream>
