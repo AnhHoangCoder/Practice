@@ -55,7 +55,7 @@ using namespace std;
 int n , b;
 struct Item{
     int A , C;
-    int id;       // <--- SỬA: Thêm biến lưu vị trí ban đầu
+    int id;
     double ratio;
 };
 
@@ -94,7 +94,7 @@ void branch_and_bound(int i){
             if(i == n){
                 if(g > fopt){
                     fopt = g;
-                    XOPT = X; // XOPT này đang lưu theo thứ tự ĐÃ SORT
+                    XOPT = X;
                 }
             }
             else{
