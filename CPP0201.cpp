@@ -24,7 +24,7 @@ void test_case(){
 
 int main(){
     int t;
-    cin >> t;
+    fin >> t;
     while(t--){
         test_case();
     }
